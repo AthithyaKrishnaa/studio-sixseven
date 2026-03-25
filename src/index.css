@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 33% 97%;
+    --foreground: 20 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 10% 15%;
+
+    --primary: 36 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 25% 92%;
+    --secondary-foreground: 20 10% 25%;
+
+    --muted: 36 15% 93%;
+    --muted-foreground: 20 5% 50%;
+
+    --accent: 0 65% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
+    --ring: 36 70% 45%;
+
+    --radius: 0.5rem;
+
+    --gold: 36 70% 45%;
+    --gold-light: 36 55% 60%;
+    --gold-glow: 36 80% 55%;
+    --cream: 36 33% 97%;
+    --cream-dark: 36 25% 92%;
+    --charcoal: 20 10% 15%;
+    --charcoal-light: 20 5% 35%;
+    --warm-white: 36 40% 99%;
+    --deep-red: 0 65% 42%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 20 10% 25%;
+    --sidebar-primary: 36 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 36 25% 92%;
+    --sidebar-accent-foreground: 20 10% 25%;
+    --sidebar-border: 36 20% 88%;
+    --sidebar-ring: 36 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-deep-red {
+    color: hsl(var(--deep-red));
+  }
+
+  .bg-warm-white {
+    background-color: hsl(var(--warm-white));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-cream-dark {
+    background-color: hsl(var(--cream-dark));
+  }
+
+  .divider-gold {
+    @apply w-16 h-0.5 mx-auto;
+    background-color: hsl(var(--gold));
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+}
