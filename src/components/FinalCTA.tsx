@@ -9,6 +9,7 @@ const FinalCTA = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
+        <img src="/logo.png" alt="Studio 67" className="h-16 w-auto mx-auto mb-8 object-contain" />
         <h2 className="font-display text-3xl md:text-5xl font-bold">
           Let's build your website
         </h2>

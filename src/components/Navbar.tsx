@@ -39,9 +39,9 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-5 px-6">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="font-display text-2xl font-bold tracking-tight text-primary"
+          className="flex items-center"
         >
-          Studio <span className="text-gold">67</span>
+          <img src="/logo.png" alt="Studio 67" className="h-10 w-auto hover:opacity-90 transition-opacity" />
         </button>
 
         {/* Desktop nav */}
