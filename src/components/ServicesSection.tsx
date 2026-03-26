@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
-import { Globe, RefreshCw, Server, Headphones } from "lucide-react";
-
 const services = [
-  { icon: Globe, title: "Website Design & Build", desc: "Custom websites built from scratch to match your brand and business goals." },
-  { icon: RefreshCw, title: "Website Redesign & Modernization", desc: "Upgrade your outdated website with a fresh, modern look and better UX." },
-  { icon: Server, title: "Domain & Hosting Setup", desc: "We handle the technical setup so you can focus on running your business." },
-  { icon: Headphones, title: "Ongoing Support", desc: "Post-launch support to keep your website running smoothly." },
+  { image: "/our_services/heading_1.png", title: "Website Design & Build", desc: "Custom websites built from scratch to match your brand and business goals." },
+  { image: "/our_services/heading_2.png", title: "Website Redesign & Modernization", desc: "Upgrade your outdated website with a fresh, modern look and better UX." },
+  { image: "/our_services/heading_3.png", title: "Domain & Hosting Setup", desc: "We handle the technical setup so you can focus on running your business." },
+  { image: "/our_services/heading_4.png", title: "Ongoing Support", desc: "Post-launch support to keep your website running smoothly." },
 ];
 
 const ServicesSection = () => (
@@ -28,21 +26,21 @@ const ServicesSection = () => (
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map((s, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow border border-border group"
-          >
-            <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
-              <s.icon className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
+              className="bg-card rounded-3xl p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow border border-border group flex flex-col items-center lg:items-start"
+            >
+              <div className="w-[90%] aspect-square mb-8 mx-auto transition-transform duration-500 group-hover:scale-105">
+                <img src={s.image} alt={s.title} className="w-full h-full object-contain rounded-2xl drop-shadow-sm" />
+              </div>
+            <h3 className="font-display text-xl md:text-2xl font-semibold text-gold mb-3 text-center lg:text-left w-full">
               {s.title}
             </h3>
-            <p className="font-body text-sm text-muted-foreground leading-relaxed">
+            <p className="font-body text-sm text-muted-foreground leading-relaxed text-center lg:text-left w-full">
               {s.desc}
             </p>
           </motion.div>
