@@ -1,3 +1,5 @@
-# Welcome to your Lovable project
+# Studio SixSeven
 
-TODO: Document your project here
+**Developer:** AthithyaKrishnaa
+
+A premium web design studio website built with React, Vite, TypeScript, and TailwindCSS.
