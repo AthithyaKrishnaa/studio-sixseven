@@ -20,9 +20,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (href: string) => {
+  const scrollTo = (href: string) => {
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    // Use setTimeout to ensure mobile menu closes before scroll triggers
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }, 50);
   };
 
   return (
@@ -49,51 +52,57 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <button
               key={link.label}
-              onClick={() => handleClick(link.href)}
+              onClick={() => scrollTo(link.href)}
               className="font-body text-sm font-medium tracking-wide text-foreground/70 hover:text-primary transition-colors"
             >
               {link.label}
             </button>
           ))}
           <button
-            onClick={() => handleClick("#contact")}
+            onClick={() => scrollTo("#contact")}
             className="bg-primary text-primary-foreground px-6 py-2.5 rounded-md font-body text-sm font-semibold tracking-wide hover:bg-primary/90 transition-colors"
           >
             Get Started
           </button>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle — white on transparent dark hero, foreground colour after scroll */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          className={`md:hidden p-2 rounded-md transition-colors touch-manipulation ${
+            scrolled
+              ? "text-foreground hover:bg-muted"
+              : "text-white hover:bg-white/10"
+          }`}
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — fully opaque solid bg so items are always readable */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card/98 backdrop-blur-md border-t border-border"
+            className="md:hidden border-t border-border overflow-hidden"
+            style={{ backgroundColor: "hsl(var(--card))" }}
           >
-            <div className="flex flex-col items-center gap-4 py-6">
+            <div className="flex flex-col items-center gap-5 py-8">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
-                  onClick={() => handleClick(link.href)}
-                  className="font-body text-base font-medium text-foreground/80 hover:text-primary transition-colors"
+                  onClick={() => scrollTo(link.href)}
+                  className="font-body text-base font-medium text-foreground hover:text-primary transition-colors w-full text-center py-2 touch-manipulation"
                 >
                   {link.label}
                 </button>
               ))}
               <button
-                onClick={() => handleClick("#contact")}
-                className="bg-primary text-primary-foreground px-6 py-2.5 rounded-md font-body text-sm font-semibold"
+                onClick={() => scrollTo("#contact")}
+                className="bg-primary text-primary-foreground px-8 py-3 rounded-md font-body text-sm font-semibold mt-2 hover:bg-primary/90 transition-colors touch-manipulation"
               >
                 Get Started
               </button>
