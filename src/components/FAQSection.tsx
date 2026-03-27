@@ -15,7 +15,7 @@ const faqs = [
 ];
 
 const FAQSection = () => (
-  <section id="faq" className="section-padding bg-warm-white">
+  <section id="faq" className="section-padding bg-cream-dark">
     <div className="container mx-auto px-6 max-w-3xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

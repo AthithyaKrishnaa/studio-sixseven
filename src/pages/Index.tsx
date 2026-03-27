@@ -6,9 +6,9 @@ import WorkSection from "@/components/WorkSection";
 import PricingSection from "@/components/PricingSection";
 import ProcessSection from "@/components/ProcessSection";
 import FAQSection from "@/components/FAQSection";
-import FinalCTA from "@/components/FinalCTA";
 import ContactInfo from "@/components/ContactInfo";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Footer from "@/components/Footer";
 
 const Index = () => (
   <>
@@ -16,13 +16,13 @@ const Index = () => (
     <HeroSection />
     <StatsSection />
     <ServicesSection />
-    <WorkSection />
     <PricingSection />
     <ProcessSection />
     <FAQSection />
-    <FinalCTA />
     <ContactInfo />
+    <WorkSection />
     <WhatsAppButton />
+    <Footer />
   </>
 );
 

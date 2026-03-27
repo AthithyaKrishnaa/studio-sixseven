@@ -8,7 +8,7 @@ const steps = [
 ];
 
 const ProcessSection = () => (
-  <section className="section-padding bg-cream-dark">
+  <section className="section-padding bg-warm-white">
     <div className="container mx-auto px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
