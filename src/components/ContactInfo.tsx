@@ -105,29 +105,19 @@ const ContactInfo = () => {
                     <a
                       href={`tel:${c.phone.replace(/\s/g, "")}`}
                       onClick={(e) => e.stopPropagation()}
-                      className="flex items-center justify-start sm:justify-center w-full gap-2 font-body text-[11px] lg:text-xs text-muted-foreground hover:text-primary transition-colors"
+                      className="flex items-center justify-start sm:justify-center w-full gap-2 font-body text-[13px] sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4 shrink-0 text-primary" />
+                      <Phone className="w-4 h-4 lg:w-[1.125rem] lg:h-[1.125rem] shrink-0 text-primary" />
                       <span className="truncate text-left font-normal">{c.phone}</span>
                     </a>
                     <a
                       href={`mailto:${c.email}`}
                       onClick={(e) => e.stopPropagation()}
-                      className="flex items-center justify-start sm:justify-center w-full gap-2 font-body text-[11px] lg:text-xs text-muted-foreground hover:text-[#EA4335] transition-colors"
+                      className="flex items-center justify-start sm:justify-center w-full gap-2 font-body text-[13px] sm:text-sm text-muted-foreground hover:text-[#EA4335] transition-colors"
                       title={c.email}
                     >
-                      <Mail className="w-3.5 h-3.5 lg:w-4 lg:h-4 shrink-0 text-[#EA4335]" />
-                      <span className="truncate text-left max-w-[150px] lg:max-w-[200px] font-normal">{c.email}</span>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/studio.sixseven/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center justify-start sm:justify-center w-full gap-2 font-body text-[11px] lg:text-xs text-muted-foreground hover:text-[#E1306C] transition-colors"
-                    >
-                      <Instagram className="w-3.5 h-3.5 lg:w-4 lg:h-4 shrink-0 text-[#E1306C]" />
-                      <span className="truncate text-left font-normal">@studio.sixseven</span>
+                      <Mail className="w-4 h-4 lg:w-[1.125rem] lg:h-[1.125rem] shrink-0 text-[#EA4335]" />
+                      <span className="truncate text-left max-w-[180px] sm:max-w-[220px] font-normal">{c.email}</span>
                     </a>
                   </div>
                 </motion.div>
